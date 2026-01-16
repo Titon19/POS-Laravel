@@ -27,7 +27,7 @@ class OrderService {
         $month = $today->format('m');
         $year  = $today->format('y');
 
-        $prefix = 'TRX-';
+        $prefix = 'TRX';
 
         $lastCode = Order::whereYear('created_at', $today->year)
             ->orderBy('order_id', 'desc')

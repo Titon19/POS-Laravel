@@ -35,7 +35,7 @@ class ProductService {
         $month = $today->format('m');
         $year  = $today->format('y');
 
-        $prefix = 'PRD-';
+        $prefix = 'PRD';
 
         $lastCode = Product::whereYear('created_at', $today->year)
             ->orderBy('product_code', 'desc')
