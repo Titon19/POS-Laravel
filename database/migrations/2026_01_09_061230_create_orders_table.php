@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamp("order_date")->useCurrent();
             $table->decimal("total_amount", 15, 2);
             $table->enum('payment_method', ["cash", "qris"])->default('qris');
-            $table->enum("status", ["unpaid", "paid", "cancelled"])->default("pending");
+            $table->enum("status", ["unpaid", "paid", "cancelled"])->default("unpaid");
             $table->string('payment_reference', 50)->nullable(); 
             $table->timestamp('paid_at')->nullable();
             $table->timestamps();

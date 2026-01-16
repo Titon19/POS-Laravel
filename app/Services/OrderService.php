@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Order;
-use App\Models\OrderItems;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
