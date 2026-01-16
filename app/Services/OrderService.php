@@ -53,6 +53,7 @@ class OrderService {
 
     public function updateOrder(int $id, array $data){
         $order = $this->findOrderById($id);
+      
         $order->update($data);
         return $order;
     }
