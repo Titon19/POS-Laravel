@@ -35,7 +35,7 @@ class ProductService {
         $month = $today->format('m');
         $year  = $today->format('y');
 
-        $prefix = 'PRD';
+        $prefix = 'PRD-';
 
         $lastCode = Product::whereYear('created_at', $today->year)
             ->orderBy('product_code', 'desc')
@@ -80,7 +80,7 @@ class ProductService {
             
             // Terus di cek di database berdasarkan slug, ada ga slug yg sama dengan yang kita masukan
             // Terus di cek juga di database berdasarkan id, ada ga id yang 
-            $exists = Product::where("slug", $newSlug)->where("id", "!=", $id)->exists();
+            $exists = Product::where("slug", operator: $newSlug)->where("id", "!=", $id)->exists();
             $data["slug"] = $exists ? $data["slug"] = $product->slug : $newSlug;
         }
 

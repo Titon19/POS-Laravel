@@ -3,14 +3,11 @@
 namespace App\Services;
 
 use App\Models\Category;
-use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 
 class CategoryService {
-    use ApiResponse;
-
     public function findCategories(Request $request){
         $perPage = $request->query("per_page", 10);
         $categories = Category::paginate($perPage, ["*"]);

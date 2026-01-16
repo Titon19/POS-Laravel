@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('slug', 100)->unique();
             $table->decimal('price' ,10, 2);
             $table->integer('stock')->default(0);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
